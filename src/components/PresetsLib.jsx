@@ -33,11 +33,11 @@ export const PresetsLib = [
 
 export const InitPreset = {
     title: "INIT",
-    instrument: instruments.TABLA,
+    instrument: instruments.GAMELAN,
     beatsPerStep: 4,
-    bpmRange: [300, 400],
+    bpmRange: [90],
     accents: [1, 0, 0, 0],
-    playMode: playModes.BY_TIME,
+    playMode: playModes.STABLE,
     playbackMode: playbackModes.STOP,
     interval: 10,
     bpmStep: 50,

@@ -19,12 +19,12 @@ import Utils from "./Utils";
 class ModePanel extends Component {
 	state = {
 		playbackMode: playbackModes.STOP,
-		playMode: playModes.BY_TIME,
+		playMode: playModes.STABLE,
 		bpmStep: 10,
 		bpmStepDropdownOpen: false,
 		byTimeInterval: 5,
 		byBarInterval: 2,
-		stableBpmSlider: 300,
+		stableBpmSlider: 90,
 		bpmRange: [100, 250]
 	};
 

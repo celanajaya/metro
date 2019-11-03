@@ -4,7 +4,8 @@ import Tone from 'tone'
 export const instruments = {
 	TABLA: "tabla",
     ELECTRO_KIT: "electrokit",
-    METRONOME: "metronome"	// ACOUSTIC_KIT: "acoustic_kit"
+    METRONOME: "metronome",	// ACOUSTIC_KIT: "acoustic_kit"
+    GAMELAN: "gamelan"
 };
 
 class InstrumentLib extends Component {
@@ -36,9 +37,16 @@ class InstrumentLib extends Component {
             key: instruments.METRONOME,
             label: "Metronome",
             samples: ["tap.wav", "down.wav","up.wav"]
-        })
-
+        });
         this.lib[ metronome.key ] = metronome;
+
+        var gamelan = new SoundMachineInstrument({
+            key: instruments.GAMELAN,
+            label: "Gamelan",
+            samples: ["Kempli.wav", "Gong-Lanang.wav", "Klentong.wav"]
+        });
+        this.lib[gamelan.key] = gamelan;
+
         
 
         this.setInstrument(defaultInstrument)
@@ -51,6 +59,7 @@ class InstrumentLib extends Component {
         electro.fan(this.fft).toMaster();
         tabla.fan(this.fft).toMaster();
         metronome.fan(this.fft).toMaster();
+        gamelan.fan(this.fft).toMaster();
     }
 
     setInstrument(key) {
