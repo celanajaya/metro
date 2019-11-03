@@ -4,7 +4,7 @@ import "./components/SoundMachine";
 import SoundMachine from "./components/SoundMachine";
 import Planner from "./components/Planner";
 import "rc-slider/assets/index.css";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "reactstrap";
 import {
 	ButtonDropdown,
@@ -28,9 +28,9 @@ import { playbackModes } from "./components/PlaybackModes";
 class App extends Component {
 	state = {
 		currentBpm: 60,
-		instrument: instruments.ELECTRO_KIT,
+		instrument: instruments.GAMELAN,
 		instrumentDropdownOpen: false,
-		instrumentDropdownLabel: "Electro kit", // bit messy, why would we hardcode this here, it ought to be taken from instrumentLib
+		instrumentDropdownLabel: "Gamelan", // bit messy, why would we hardcode this here, it ought to be taken from instrumentLib
 		cycleDropdownOpen: false
 	};
 
@@ -149,6 +149,16 @@ class App extends Component {
 					}}
 				>
 					Metronome
+				</DropdownItem>
+
+				<DropdownItem
+					onClick={() => {
+						this.onInstrumentSelect(
+							instruments.GAMELAN
+						);
+					}}
+				>
+					Gamelan
 				</DropdownItem>
 			</DropdownMenu>
 		</ButtonDropdown>);
